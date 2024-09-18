@@ -3,13 +3,13 @@
     justify-content: space-between;
   }
   .link {
-    color: black;
+    color: rgb(200, 91, 91);
     font-size: 25px;
     margin: 0 15px;
     &:hover,
     &:focus,
     &:active {
-      color: #04ba6e;
+      color: #31858d;
     }
   }
   

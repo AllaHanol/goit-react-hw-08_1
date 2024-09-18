@@ -13,7 +13,7 @@
     padding: 10px 20px;
     min-width: 140px;
     border-radius: 15px;
-    background-color: #04ba6e;
+    background-color: #31858d;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@
     &:hover,
     &:focus,
     &:active {
-      background-color: #046e42;
+      background-color: #31858d;
     }
   }
   

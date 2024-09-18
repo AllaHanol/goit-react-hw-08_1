@@ -40,7 +40,7 @@ const RegistrationForm = () => {
       <Form className={css.form}>
         <label className={css.label}>
           <span>Enter your name</span>
-          <Field type="text" name="name" placeholder="Simon" />
+          <Field type="text" name="name" placeholder="Enter your name" />
           <ErrorMessage
             className={css.errorText}
             name="name"
@@ -52,7 +52,7 @@ const RegistrationForm = () => {
           <Field
             type="text"
             name="email"
-            placeholder="test.example@gmail.com"
+            placeholder="Enter your email@gmail.com"
           />
           <ErrorMessage
             className={css.errorText}
@@ -79,7 +79,7 @@ const RegistrationForm = () => {
           Sign Up
         </button>
         {error && (
-          <p className={css.errorText}>Oops, some error occurred... {error}</p>
+          <p className={css.errorText}>Oops, something went wrong... {error}</p>
         )}
       </Form>
     </Formik>
