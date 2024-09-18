@@ -1,9 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { nanoid } from 'nanoid';
 import { useId } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsOps';
+import { addContact } from '../../redux/contacts/operations';
+import { toast } from 'react-hot-toast';
 
 import css from './ContactForm.module.css';
 
@@ -12,7 +12,10 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
 const onAddContact = (newContact) => {
-  dispatch(addContact(newContact));
+  dispatch(addContact(newContact))
+  .unwrap()
+  .then(()=>{
+    toast.success("Contact added successfully!");})
 };
 
   const initialValues = {name: '', number: ''};
@@ -30,10 +33,8 @@ const onAddContact = (newContact) => {
   });
   
   const handleFormSubmit = (values, actions) => {
-    values.id = nanoid();
     onAddContact(values);
-    actions.resetForm();
-   
+    actions.resetForm();   
   };
 
   return (
@@ -51,7 +52,6 @@ const onAddContact = (newContact) => {
         <ErrorMessage className={css.errorText} name="number" component="div" />
         <button className={css.submitBtn} type="submit">Add Contact</button>
       </Form> 
-      
       
     </Formik>
   );
